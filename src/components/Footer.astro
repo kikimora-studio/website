@@ -32,7 +32,13 @@ const currentYear = new Date().getFullYear();
 			</a>
 		</div>
 
-		<p class="mt-10 text-center text-sm" x-data>
+		<div class="mt-8 flex items-center justify-center gap-4 text-sm text-white/60">
+			<a href="/privacy-policy" class="hover:text-white hover:underline">Privacy Policy</a>
+			<span>|</span>
+			<a href="/terms" class="hover:text-white hover:underline">Terms of Service</a>
+		</div>
+
+		<p class="mt-4 text-center text-sm" x-data>
 			&copy; {currentYear} Kikimora Studio.
 			<span x-text="$store.lang.current === 'bg' ? 'Всички права запазени.' : 'All rights reserved.'">Всички права запазени.</span>
 		</p>
