@@ -7,8 +7,8 @@ import playformInline from "@playform/inline";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://astropie.netlify.app",
-    base: "/",
+    site: "https://kikimora-studio.github.io",
+    base: "/website",
     // trailingSlash: 'always',
     integrations: [alpinejs(), mdx(), (await import("@playform/inline")).default()],
     output: "static",
