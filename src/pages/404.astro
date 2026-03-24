@@ -1,0 +1,23 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import Section from "~/components/Section.astro";
+import Button from "~/components/Button.astro";
+---
+
+<Layout title="404 - Kikimora Studio" pageTitle="404 | Kikimora Studio">
+	<Section class:list={"bg-white"}>
+		<div class="text-center prose max-w-none" x-data>
+			<h1 class="font-black text-brand-green">404</h1>
+			<p class="text-xl">
+				<span x-show="$store.lang.current === 'bg'">Страницата не е намерена</span>
+				<span x-show="$store.lang.current === 'en'" x-cloak>Page not found</span>
+			</p>
+			<div class="mt-8">
+				<Button url="/">
+					<span x-show="$store.lang.current === 'bg'">Начало</span>
+					<span x-show="$store.lang.current === 'en'" x-cloak>Home</span>
+				</Button>
+			</div>
+		</div>
+	</Section>
+</Layout>

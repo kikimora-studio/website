@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"title": "Kikimora Studio",
+		"image": "/src/assets/images/kikimora/pic1.jpg",
+		"alt": "Kikimora Studio"
+	},
+	{
+		"id": 2,
+		"title": "Kikimora Studio",
+		"image": "/src/assets/images/kikimora/pic2.jpg",
+		"alt": "Kikimora Studio"
+	},
+	{
+		"id": 3,
+		"title": "Reformer Pilates Equipment",
+		"image": "/src/assets/images/kikimora/equipment-1.jpg",
+		"alt": "Reformer Pilates Equipment"
+	},
+	{
+		"id": 4,
+		"title": "Bodyshape V2",
+		"image": "/src/assets/images/kikimora/equipment-2-bodyshape.jpg",
+		"alt": "Bodyshape V2 Equipment"
+	}
+]

@@ -1,0 +1,51 @@
+---
+import "~/styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+const { pageTitle, title, description } = Astro.props;
+const baseUrl = `${Astro.url.protocol}//${Astro.url.host}`;
+import { themeColor } from "~/data/config";
+---
+
+<!doctype html>
+<html lang="bg" x-data x-bind:lang="$store.lang.current">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content={themeColor} />
+		<meta name="description" content={description || "Kikimora Studio - Reformer Pilates & Bodyshape V2"} />
+		<meta name="robots" content="index,follow" />
+		<link rel="author" href="humans.txt" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title || "Kikimora Studio"} />
+		<meta property="og:description" content={description || "Reformer Pilates & Bodyshape V2 - Coming Soon"} />
+		<meta property="og:site_name" content="Kikimora Studio" />
+		<meta property="og:locale" content="bg_BG" />
+		<title>{pageTitle || "Kikimora Studio"}</title>
+		<ClientRouter />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+
+		<script>
+			import Alpine from 'alpinejs';
+
+			document.addEventListener('alpine:init', () => {
+				Alpine.store('lang', {
+					current: localStorage.getItem('kikimora-lang') || 'bg',
+					toggle() {
+						this.current = this.current === 'bg' ? 'en' : 'bg';
+						localStorage.setItem('kikimora-lang', this.current);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
