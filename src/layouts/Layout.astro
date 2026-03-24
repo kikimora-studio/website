@@ -9,23 +9,45 @@ import { themeColor } from "~/data/config";
 ---
 
 <!doctype html>
-<html lang="bg" x-data x-bind:lang="$store.lang.current">
+<html lang="bg" x-data x-bind:lang="$store.lang.current" x-bind:class="$store.dark.on ? 'dark' : ''">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content={themeColor} />
 		<meta name="description" content={description || "Kikimora Studio - Reformer Pilates & Bodyshape V2"} />
 		<meta name="robots" content="index,follow" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="author" href="humans.txt" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileColor" content="#7c3aed" />
+
+		<!-- Open Graph -->
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title || "Kikimora Studio"} />
 		<meta property="og:description" content={description || "Reformer Pilates & Bodyshape V2 - Coming Soon"} />
+		<meta property="og:image" content={`${baseUrl}/og-image.svg`} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		<meta property="og:site_name" content="Kikimora Studio" />
 		<meta property="og:locale" content="bg_BG" />
+		<meta property="og:locale:alternate" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title || "Kikimora Studio"} />
+		<meta name="twitter:description" content={description || "Reformer Pilates & Bodyshape V2 - Coming Soon"} />
+		<meta name="twitter:image" content={`${baseUrl}/og-image.svg`} />
+
 		<title>{pageTitle || "Kikimora Studio"}</title>
 		<ClientRouter />
+
+		<!-- Prevent dark mode flash -->
+		<script is:inline>
+			if (localStorage.getItem('kikimora-dark') === 'true' ||
+				(!localStorage.getItem('kikimora-dark') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
 	</head>
 	<body>
 		<Header />
@@ -43,6 +65,15 @@ import { themeColor } from "~/data/config";
 					toggle() {
 						this.current = this.current === 'bg' ? 'en' : 'bg';
 						localStorage.setItem('kikimora-lang', this.current);
+					}
+				});
+
+				Alpine.store('dark', {
+					on: localStorage.getItem('kikimora-dark') === 'true' ||
+						(!localStorage.getItem('kikimora-dark') && window.matchMedia('(prefers-color-scheme: dark)').matches),
+					toggle() {
+						this.on = !this.on;
+						localStorage.setItem('kikimora-dark', this.on);
 					}
 				});
 			});

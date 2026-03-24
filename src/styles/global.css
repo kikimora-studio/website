@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--font-inter: "Inter", "sans-serif";
 	--color-brand-green: #7c3aed;
@@ -120,7 +122,7 @@ body {
 }
 
 body {
-	@apply h-full scroll-smooth font-inter text-gray-700;
+	@apply h-full scroll-smooth font-inter text-gray-700 dark:bg-gray-900 dark:text-gray-200;
 }
 
 h1,
@@ -192,6 +194,38 @@ p {
 
 [x-cloak] {
 	display: none !important;
+}
+
+/* Dark mode overrides */
+:where(.dark) section.bg-white {
+	@apply bg-gray-900;
+}
+
+:where(.dark) .bg-gradient-to-br {
+	background-image: none;
+	@apply bg-gray-800;
+}
+
+:where(.dark) header {
+	@apply bg-gray-900;
+}
+
+:where(.dark) footer {
+	@apply bg-gray-950;
+}
+
+:where(.dark) .prose {
+	--tw-prose-body: var(--color-gray-300);
+	--tw-prose-headings: var(--color-gray-100);
+}
+
+:where(.dark) input,
+:where(.dark) textarea {
+	@apply bg-gray-800 border-gray-600 text-gray-200;
+}
+
+:where(.dark) .fixed.bg-white {
+	@apply bg-gray-900;
 }
 
 section.bg-white + section.bg-white > .container,

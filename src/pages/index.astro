@@ -5,7 +5,6 @@ import Hero from "~/components/Hero.astro";
 import { Picture, Image } from "astro:assets";
 import Badge from "~/components/Badge.astro";
 import Button from "~/components/Button.astro";
-import Grid from "~/components/Grid.astro";
 import Heading from "~/components/Heading.astro";
 import { socialMedia } from "~/data/config";
 
@@ -19,48 +18,55 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 
 <Layout title="Kikimora Studio - Coming Soon" pageTitle="Kikimora Studio | Reformer Pilates & Bodyshape V2" description="Ново фитнес и уелнес студио с Reformer Pilates и Bodyshape V2 технология">
 
-	<!-- HERO - Coming Soon -->
-	<Section class:list={"bg-gradient-to-br from-brand-green/5 via-white to-brand-red/5"}>
-		<div class="text-center max-w-4xl mx-auto" x-data>
-			<div class="flex justify-center mb-8">
-				<Picture
-					src={logoImg}
-					width={200}
-					height={200}
-					formats={["avif", "webp"]}
-					alt="Kikimora Studio Logo"
-					loading={"eager"}
-					fetchpriority={"high"}
-					class="rounded-3xl shadow-2xl"
-				/>
-			</div>
+	<!-- HERO -->
+	<Section class:list={"bg-white"}>
+		<div class="text-center max-w-3xl mx-auto" x-data>
+			<Picture
+				src={logoImg}
+				width={120}
+				height={120}
+				formats={["avif", "webp"]}
+				alt="Kikimora Studio Logo"
+				loading={"eager"}
+				fetchpriority={"high"}
+				class="mx-auto rounded-2xl shadow-lg mb-6"
+			/>
 
-			<Badge title="Coming Soon" color="green" />
-
-			<h1 class="font-black text-brand-green mt-4">
+			<span class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-bold bg-brand-green text-white">
 				<span x-show="$store.lang.current === 'bg'">Очаквайте скоро</span>
 				<span x-show="$store.lang.current === 'en'" x-cloak>Coming Soon</span>
-			</h1>
+			</span>
 
-			<p class="text-2xl font-semibold text-brand-red mt-2">Reformer Pilates & Bodyshape V2</p>
+			<h1 class="font-black text-brand-green mt-4 text-4xl lg:text-5xl">Kikimora Studio</h1>
+			<p class="text-xl font-semibold text-brand-red mt-2">Reformer Pilates & Bodyshape V2</p>
 
-			<p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+			<p class="text-base text-gray-600 dark:text-gray-400 mt-4">
 				<span x-show="$store.lang.current === 'bg'">Ново фитнес и уелнес студио, оборудвано с 6 реформър пилатес уреда и иновативната Bodyshape V2 технология.</span>
 				<span x-show="$store.lang.current === 'en'" x-cloak>A new fitness and wellness studio equipped with 6 Reformer Pilates machines and innovative Bodyshape V2 technology.</span>
 			</p>
 
-			<!-- Social Follow -->
-			<div class="mt-10 flex items-center justify-center gap-6">
-				<span class="text-gray-500 font-medium">
-					<span x-show="$store.lang.current === 'bg'">Последвайте ни</span>
-					<span x-show="$store.lang.current === 'en'" x-cloak>Follow Us</span>
-				</span>
-				<a href={socialMedia.instagram.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Instagram">
-					<svg class="size-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-				</a>
-				<a href={socialMedia.facebook.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Facebook">
-					<svg class="size-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-				</a>
+			<!-- Opening Date + Social -->
+			<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+				<div class="inline-flex items-center gap-3 bg-brand-green/5 dark:bg-brand-green/15 rounded-xl px-5 py-3">
+					<svg class="size-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+					<span class="text-sm font-bold text-brand-green">
+						<span x-show="$store.lang.current === 'bg'">Пролет 2026</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Spring 2026</span>
+					</span>
+				</div>
+
+				<div class="flex items-center gap-3">
+					<span class="text-gray-400 text-sm">
+						<span x-show="$store.lang.current === 'bg'">Последвайте ни</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Follow Us</span>
+					</span>
+					<a href={socialMedia.instagram.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Instagram">
+						<svg class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+					</a>
+					<a href={socialMedia.facebook.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Facebook">
+						<svg class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+					</a>
+				</div>
 			</div>
 		</div>
 	</Section>
@@ -142,22 +148,22 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 				<div class="grid grid-cols-2 gap-2 not-prose">
 					<template x-if="$store.lang.current === 'bg'">
 						<div class="contents">
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Анти-гравитационна бягаща пътека</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Ароматерапия</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Озонотерапия</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Цветотерапия</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Колагенна лампа</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Инфрачервена терапия</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Анти-гравитационна бягаща пътека</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Ароматерапия</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Озонотерапия</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Цветотерапия</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Колагенна лампа</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Инфрачервена терапия</div>
 						</div>
 					</template>
 					<template x-if="$store.lang.current === 'en'">
 						<div class="contents">
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Anti-gravity treadmill</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Aromatherapy</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Ozone therapy</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Color therapy</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Collagen lamp</div>
-							<div class="bg-brand-red/5 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Infrared therapy</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Anti-gravity treadmill</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Aromatherapy</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Ozone therapy</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Color therapy</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Collagen lamp</div>
+							<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-lg p-3 text-center text-sm font-medium text-brand-red">Infrared therapy</div>
 						</div>
 					</template>
 				</div>
@@ -181,14 +187,14 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 	</Section>
 
 	<!-- MOBILE APP Preview -->
-	<Section class:list={"bg-gradient-to-br from-brand-green/10 to-brand-red/10"}>
+	<Section class:list={"bg-brand-green/5 dark:bg-gray-800"}>
 		<div class="text-center mb-12" x-data>
 			<Badge title="Mobile App" />
 			<h2 class="font-black text-brand-green mt-4">
 				<span x-show="$store.lang.current === 'bg'">Резервирайте лесно</span>
 				<span x-show="$store.lang.current === 'en'" x-cloak>Book with ease</span>
 			</h2>
-			<p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+			<p class="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
 				<span x-show="$store.lang.current === 'bg'">С нашето мобилно приложение ще можете да виждате свободните часове и да резервирате с един клик чрез вашия Facebook или Google профил.</span>
 				<span x-show="$store.lang.current === 'en'" x-cloak>With our mobile app, you'll be able to see available time slots and book with a single tap using your Facebook or Google profile.</span>
 			</p>
@@ -204,7 +210,7 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 					class="mx-auto drop-shadow-2xl"
 					loading={"lazy"}
 				/>
-				<p class="mt-4 font-semibold text-gray-600">iOS</p>
+				<p class="mt-4 font-semibold text-gray-600 dark:text-gray-400">iOS</p>
 			</div>
 			<div class="text-center">
 				<Picture
@@ -215,24 +221,24 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 					class="mx-auto drop-shadow-2xl"
 					loading={"lazy"}
 				/>
-				<p class="mt-4 font-semibold text-gray-600">Android</p>
+				<p class="mt-4 font-semibold text-gray-600 dark:text-gray-400">Android</p>
 			</div>
 		</div>
 
 		<div class="text-center mt-12" x-data>
-			<div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur rounded-full px-6 py-3 shadow-sm">
+			<div class="inline-flex items-center gap-3 bg-white/80 dark:bg-gray-700/80 backdrop-blur rounded-full px-6 py-3 shadow-sm">
 				<!-- Google icon -->
 				<svg class="size-6" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
 				<!-- Facebook icon -->
 				<svg class="size-6" fill="#1877F2" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-				<span class="text-gray-600 font-medium">
+				<span class="text-gray-600 dark:text-gray-300 font-medium">
 					<span x-show="$store.lang.current === 'bg'">Резервирайте с Facebook или Google профил</span>
 					<span x-show="$store.lang.current === 'en'" x-cloak>Book with your Facebook or Google profile</span>
 				</span>
 			</div>
 		</div>
 
-		<p class="text-center text-gray-500 mt-6 font-medium" x-data>
+		<p class="text-center text-gray-500 dark:text-gray-400 mt-6 font-medium" x-data>
 			<span x-show="$store.lang.current === 'bg'">Приложението идва скоро за iOS и Android</span>
 			<span x-show="$store.lang.current === 'en'" x-cloak>App coming soon for iOS and Android</span>
 		</p>
@@ -249,9 +255,9 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 			</Heading>
 
 			<div class="grid md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
-				<div class="bg-brand-green/5 rounded-2xl p-8 text-center">
+				<div class="bg-brand-green/5 dark:bg-brand-green/15 rounded-2xl p-8 text-center">
 					<h3 class="text-2xl font-bold text-brand-green mb-4">Reformer Pilates</h3>
-					<div class="space-y-3 text-gray-600">
+					<div class="space-y-3 text-gray-600 dark:text-gray-400">
 						<p class="text-4xl font-black text-brand-green">6</p>
 						<p class="font-medium">
 							<span x-show="$store.lang.current === 'bg'">уреда в залата</span>
@@ -269,9 +275,9 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 					</div>
 				</div>
 
-				<div class="bg-brand-red/5 rounded-2xl p-8 text-center">
+				<div class="bg-brand-red/5 dark:bg-brand-red/15 rounded-2xl p-8 text-center">
 					<h3 class="text-2xl font-bold text-brand-red mb-4">Bodyshape V2</h3>
-					<div class="space-y-3 text-gray-600">
+					<div class="space-y-3 text-gray-600 dark:text-gray-400">
 						<p class="text-4xl font-black text-brand-red">1</p>
 						<p class="font-medium">
 							<span x-show="$store.lang.current === 'bg'">уред в залата</span>
@@ -286,6 +292,78 @@ import androidBook from "~/assets/images/kikimora/android-book.png";
 							<span x-show="$store.lang.current === 'bg'">Начинаещи & Напреднали</span>
 							<span x-show="$store.lang.current === 'en'" x-cloak>Beginner & Advanced</span>
 						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</Section>
+
+	<!-- Location -->
+	<Section class:list={"bg-brand-green/5 dark:bg-gray-800"}>
+		<div x-data>
+			<Heading>
+				<h2 slot="heading-title" class="font-black text-brand-green h2">
+					<span x-show="$store.lang.current === 'bg'">Къде ще ни намерите</span>
+					<span x-show="$store.lang.current === 'en'" x-cloak>Where to Find Us</span>
+				</h2>
+				<p slot="heading-content" class="dark:text-gray-400">
+					<span x-show="$store.lang.current === 'bg'">Следете ни в социалните мрежи за точен адрес и дата на отваряне</span>
+					<span x-show="$store.lang.current === 'en'" x-cloak>Follow us on social media for the exact address and opening date</span>
+				</p>
+			</Heading>
+
+			<div class="grid md:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto text-center">
+				<!-- Location -->
+				<div class="flex flex-col items-center gap-3">
+					<div class="bg-brand-green/10 dark:bg-brand-green/20 rounded-full p-4">
+						<svg class="size-8 text-brand-green" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+					</div>
+					<h3 class="font-bold text-lg">
+						<span x-show="$store.lang.current === 'bg'">Локация</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Location</span>
+					</h3>
+					<p class="text-gray-600 dark:text-gray-400">
+						<span x-show="$store.lang.current === 'bg'">България</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Bulgaria</span>
+					</p>
+				</div>
+
+				<!-- Hours -->
+				<div class="flex flex-col items-center gap-3">
+					<div class="bg-brand-red/10 dark:bg-brand-red/20 rounded-full p-4">
+						<svg class="size-8 text-brand-red" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+					</div>
+					<h3 class="font-bold text-lg">
+						<span x-show="$store.lang.current === 'bg'">Работно време</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Working Hours</span>
+					</h3>
+					<p class="text-gray-600 dark:text-gray-400">
+						<span x-show="$store.lang.current === 'bg'">Пон - Пет: 8:00 - 20:00</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Mon - Fri: 8:00 AM - 8:00 PM</span>
+					</p>
+					<p class="text-gray-600 dark:text-gray-400">
+						<span x-show="$store.lang.current === 'bg'">Съб: 9:00 - 18:00</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Sat: 9:00 AM - 6:00 PM</span>
+					</p>
+				</div>
+
+				<!-- Contact -->
+				<div class="flex flex-col items-center gap-3">
+					<div class="bg-brand-green/10 dark:bg-brand-green/20 rounded-full p-4">
+						<svg class="size-8 text-brand-green" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+					</div>
+					<h3 class="font-bold text-lg">
+						<span x-show="$store.lang.current === 'bg'">Контакти</span>
+						<span x-show="$store.lang.current === 'en'" x-cloak>Contact</span>
+					</h3>
+					<a href="mailto:info@kikimora.studio" class="text-brand-green hover:underline">info@kikimora.studio</a>
+					<div class="flex gap-4 mt-2">
+						<a href={socialMedia.instagram.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Instagram">
+							<svg class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+						</a>
+						<a href={socialMedia.facebook.url} target="_blank" rel="noopener noreferrer" class="text-brand-green hover:text-brand-green/70 transition" aria-label="Facebook">
+							<svg class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+						</a>
 					</div>
 				</div>
 			</div>
