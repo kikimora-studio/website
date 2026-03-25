@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Button from "~/components/Button.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') || '/';
 ---
 
 <Layout title="404 - Kikimora Studio" pageTitle="404 | Kikimora Studio">
@@ -13,7 +14,7 @@ import Button from "~/components/Button.astro";
 				<span x-show="$store.lang.current === 'en'" x-cloak>Page not found</span>
 			</p>
 			<div class="mt-8">
-				<Button url="/">
+				<Button url={base}>
 					<span x-show="$store.lang.current === 'bg'">Начало</span>
 					<span x-show="$store.lang.current === 'en'" x-cloak>Home</span>
 				</Button>

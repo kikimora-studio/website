@@ -4,6 +4,8 @@ import { socialMedia } from "~/data/config";
 import { Image } from "astro:assets";
 import logo from "~/assets/images/kikimora/kiki-yoga-1024-transparent.png";
 const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const prefixUrl = (url: string) => url === '/' ? (base || '/') : `${base}${url}`;
 ---
 
 <footer class="bg-brand-green text-white">
@@ -15,7 +17,7 @@ const currentYear = new Date().getFullYear();
 		<nav class="flex flex-col sm:flex-row items-center justify-center gap-x-12 gap-y-3 font-medium mt-6" aria-label="Footer">
 			{
 				menuMain.map((item) => (
-					<a href={item.url} class="hover:underline" x-data x-text={`$store.lang.current === 'bg' ? '${item.nameBg}' : '${item.name}'`}>
+					<a href={prefixUrl(item.url)} class="hover:underline" x-data x-text={`$store.lang.current === 'bg' ? '${item.nameBg}' : '${item.name}'`}>
 						{item.name}
 					</a>
 				))
@@ -33,9 +35,9 @@ const currentYear = new Date().getFullYear();
 		</div>
 
 		<div class="mt-8 flex items-center justify-center gap-4 text-sm text-white/60">
-			<a href="/privacy-policy" class="hover:text-white hover:underline">Privacy Policy</a>
+			<a href={prefixUrl("/privacy-policy")} class="hover:text-white hover:underline">Privacy Policy</a>
 			<span>|</span>
-			<a href="/terms" class="hover:text-white hover:underline">Terms of Service</a>
+			<a href={prefixUrl("/terms")} class="hover:text-white hover:underline">Terms of Service</a>
 		</div>
 
 		<p class="mt-4 text-center text-sm" x-data>
