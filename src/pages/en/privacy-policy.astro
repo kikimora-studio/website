@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mehovconsult.com/en/privacy-policy",
+      "name": "Privacy and Cookie Policy | Mehov Consult",
+      "description": "How MEHOV CONSULT EOOD processes personal data from the website forms, which cookies are used and what your rights are.",
+      "url": "https://mehovconsult.com/en/privacy-policy",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Mehov Consult",
+        "url": "https://mehovconsult.com/en"
+      },
+      "about": {
+        "@id": "https://mehovconsult.com/#organization"
+      }
+    }
+  ]
+};
+---
+<Layout lang="en" path="/en/privacy-policy" title={"Privacy and Cookie Policy | Mehov Consult"} description={"How MEHOV CONSULT EOOD processes personal data from the website forms, which cookies are used and what your rights are."} schema={schema}>
+<main class="mc-legal">
+  <style is:inline>
+    .mc-legal { max-width: 860px; margin: 0 auto; padding: 56px 20px 80px; color: #1f2937; line-height: 1.7; }
+    .mc-legal h1 { font-size: 2rem; color: #d00000; margin: 0 0 8px; }
+    .mc-legal .mc-legal__date { color: #6b7280; margin: 0 0 32px; font-size: .95rem; }
+    .mc-legal h2 { font-size: 1.25rem; margin: 32px 0 10px; color: #111827; }
+    .mc-legal p, .mc-legal li { margin: 0 0 10px; }
+    .mc-legal ul { padding-left: 22px; }
+    .mc-legal a { color: #d00000; }
+  </style>
+  <h1>Privacy and Cookie Policy</h1>
+  <p class="mc-legal__date">Last updated: 3 November 2026</p>
+  <h2>1. Who processes your data</h2>
+  <p>The data controller is <strong>MEHOV CONSULT EOOD</strong>, UIC 204406662, correspondence address: Sofia 1756, Darvenitsa District, Block 48, Entrance V, Office 6, email <a href="mailto:d.mehov@gmail.com">d.mehov@gmail.com</a>, phone <a href="tel:+359879884488">+359 879 88 44 88</a>.</p>
+  <h2>2. What data we collect and why</h2>
+  <ul>
+    <li><strong>Enquiry and contact forms.</strong> When you write to us through the website we receive your name, phone, email, message and, optionally, your company name. We use them only to answer your enquiry and, if you decide to work with us, to prepare a contract. Legal basis: steps taken at your request prior to entering into a contract (Article 6(1)(b) of Regulation (EU) 2016/679) and our legitimate interest in responding to enquiries (Article 6(1)(f)).</li>
+    <li><strong>Technical data.</strong> When the website loads, our server and service providers receive your IP address, browser and device type, date and time. They are used for security and for displaying the website correctly. Legal basis: legitimate interest.</li>
+    <li><strong>Phone and email.</strong> If you call or email us directly, we process the data you provide in order to reply.</li>
+  </ul>
+  <h2>3. Third-party services</h2>
+  <ul>
+    <li><strong>Cloudflare Turnstile</strong> – protects the forms from automated spam. When the check is displayed, Cloudflare receives technical data about your connection.</li>
+    <li><strong>Google Maps</strong> – the map on the Contact page is loaded from Google; when it loads, Google receives your IP address and may set its own cookies.</li>
+    <li><strong>Google Analytics 4</strong> (Google Ireland Ltd.) – website visit statistics (which pages are viewed, on what device, and where the visit came from). Used only if you have accepted analytics cookies.</li>
+    <li><strong>Composity</strong> – the platform the website is built on. Form data is stored in its infrastructure and forwarded to our email.</li>
+  </ul>
+  <p>These providers may process data on servers outside the European Union. In such cases the transfer takes place with appropriate safeguards under Chapter V of Regulation (EU) 2016/679 (for example standard contractual clauses).</p>
+  <h2>4. Cookies</h2>
+  <p>Technically necessary cookies may be set by Cloudflare (spam protection) and by Google when the map loads.</p>
+  <p>Analytics cookies (Google Analytics: <code>_ga</code> and <code>_ga_*</code>, kept for up to 2 years) are set only after you click “Accept” in the cookie banner. Legal basis: your consent (Art. 6(1)(a) of Regulation (EU) 2016/679). If you decline, the website works the same way. We do not use advertising cookies. Data in Google Analytics is kept for up to 14 months and then deleted automatically.</p>
+  <p>You can change or withdraw your consent at any time via the “Cookie settings” link at the bottom of every page. You can also delete or block cookies in your browser settings.</p>
+  <h2>5. How long we keep the data</h2>
+  <p>Enquiry data is kept for up to 12 months after the last correspondence about it. If you become our client, data is kept in accordance with the contract and the retention periods under accounting and tax law.</p>
+  <h2>6. Your rights</h2>
+  <p>You have the right to request access to your data, its rectification or erasure, restriction of processing, data portability, and to object to processing based on legitimate interest. To exercise your rights, write to <a href="mailto:d.mehov@gmail.com">d.mehov@gmail.com</a>. You also have the right to lodge a complaint with the Bulgarian Commission for Personal Data Protection (<a href="https://www.cpdp.bg" target="_blank" rel="noopener noreferrer">www.cpdp.bg</a>), 2 Prof. Tsvetan Lazarov Blvd., Sofia 1592.</p>
+  <h2>7. Changes</h2>
+  <p>If this policy changes, we will publish the new version on this page with a new update date.</p>
+</main> 
+<!-- ===== FOOTER (VAMIBEX 18.10.2026) ===== -->
+<!-- www -> non-www (VAMIBEX 12.11.2026; временно, докато няма 301 на сървъра) -->
+</Layout>

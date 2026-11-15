@@ -1,0 +1,613 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mehovconsult.com/en/services/consultancy",
+      "name": "Tax Consulting in Sofia | Mehov Consult",
+      "description": "Tax and business consulting for companies in Sofia: VAT, corporate tax, tax planning, NRA audits. Clear answers you can act on.",
+      "url": "https://mehovconsult.com/en/services/consultancy",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Мехов Консулт",
+        "url": "https://mehovconsult.com/bg"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mehovconsult.com/en/services/consultancy#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a consultation cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From 50 € per hour. The exact amount depends on the type and scope of the question. Contact us to discuss your case and receive a quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get a consultation without being your accounting client?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Consulting is entirely separate — you don't need to change your current accountant to get a competent opinion from us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sole trader or limited company — which is right for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your activity and level of risk. With a limited company your personal assets are protected; as a sole trader you are liable with all your assets. Contact us for a specific assessment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with clients outside Sofia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Consultations can also be held remotely."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+<Layout lang="en" path="/en/services/consultancy" title={"Tax Consulting in Sofia | Mehov Consult"} description={"Tax and business consulting for companies in Sofia: VAT, corporate tax, tax planning, NRA audits. Clear answers you can act on."} schema={schema}>
+<main class="mc-service">
+  <style is:inline>
+    .mc-service {
+      --brand: #d00000;
+      --brand-2: #4d0000;
+      --red: #d00000;
+      --red-dark: #b91c1c;
+      --text: #15181b;
+      --muted: #5b6672;
+      --surface: #ffffff;
+      --bg: #fefefe;
+      --border: rgba(0, 0, 0, 0.06);
+      --radius: 20px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.10);
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.07);
+      font-family: "PT Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      max-width: 100%;
+    }
+    .mc-service * { box-sizing: border-box; }
+    .mc-service .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .mc-service .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+    .mc-service .btn-orange {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 15px 40px rgba(208, 0, 0, 0.3);
+    }
+    .mc-service .btn-orange:hover { transform: translateY(-3px); background: var(--red-dark); }
+    .mc-service .btn-outline {
+      background: #fff;
+      color: var(--red);
+      border: 2px solid var(--red);
+    }
+    .mc-service .btn-outline:hover { background: var(--red); color: #fff; }
+    /* HERO — семпъл градиент, без снимка */
+    .mc-service .svc-hero {
+      position: relative;
+      padding: 96px 20px 72px;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(208, 0, 0, 0.10), transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(208, 0, 0, 0.06), transparent 42%),
+        linear-gradient(120deg, #ffffff, #fdf2f2);
+    }
+    .mc-service .svc-hero__wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      animation: svcFadeUp 0.8s ease-out both;
+    }
+    @keyframes svcFadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mc-service .svc-hero__eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(208, 0, 0, 0.08);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .mc-service .svc-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--red);
+      margin: 0 0 16px;
+      line-height: 1.15;
+    }
+    .mc-service .svc-hero__sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      color: var(--muted);
+      margin: 0 auto 30px;
+      max-width: 620px;
+    }
+    .mc-service .svc-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    /* INTRO */
+    .mc-service .svc-intro {
+      padding: 64px 0 24px;
+    }
+    .mc-service .svc-intro__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mc-service .svc-intro h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      color: var(--brand-2);
+      font-weight: 800;
+      margin: 0 0 18px;
+    }
+    .mc-service .svc-intro p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    /* INCLUDES — grid of what's covered */
+    .mc-service .svc-includes {
+      padding: 48px 0 56px;
+    }
+    .mc-service .svc-includes h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      color: var(--brand-2);
+      font-weight: 800;
+      margin: 0 0 36px;
+    }
+    .mc-service .svc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 720px) {
+      .mc-service .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .mc-service .svc-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .mc-service .svc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(208, 0, 0, 0.15);
+    }
+    .mc-service .svc-card__icon {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(208, 0, 0, 0.08);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mc-service .svc-card__icon svg { width: 24px; height: 24px; }
+    .mc-service .svc-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .mc-service .svc-card p {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    /* WHY */
+    .mc-service .svc-why {
+      padding: 56px 0;
+      background: #f9fafb;
+    }
+    .mc-service .svc-why__inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mc-service .svc-why h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      color: var(--brand-2);
+      font-weight: 800;
+      margin: 0 0 18px;
+    }
+    .mc-service .svc-why p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    /* FAQ */
+    .mc-service .svc-faq {
+      padding: 56px 0 64px;
+    }
+    .mc-service .svc-faq h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      color: var(--brand-2);
+      font-weight: 800;
+      margin: 0 0 32px;
+    }
+    .mc-service .faq-item {
+      max-width: 800px;
+      margin: 0 auto 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+    .mc-service .faq-question {
+      width: 100%;
+      padding: 18px 22px;
+      border: 0;
+      background: #fff;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: inherit;
+      color: var(--text);
+    }
+    .mc-service .faq-question span {
+      color: var(--red);
+      font-size: 1.3rem;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .mc-service .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #fafafa;
+      padding: 0 22px;
+      transition: all 0.4s ease;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .mc-service .faq-item.active .faq-answer { max-height: 300px; padding: 0 22px 18px; }
+    .mc-service .faq-item.active .faq-question span { transform: rotate(45deg); }
+    /* CTA */
+    .mc-service .svc-cta {
+      padding: 0 20px 64px;
+      text-align: center;
+    }
+    .mc-service .svc-cta__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 52px 24px;
+      border-radius: 24px;
+      background: linear-gradient(120deg, rgba(208, 0, 0, 0.10), #fff);
+      border: 1px solid rgba(208, 0, 0, 0.08);
+    }
+    .mc-service .svc-cta__inner h2 {
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      color: var(--red);
+      font-weight: 800;
+      margin: 0 0 14px;
+    }
+    .mc-service .svc-cta__inner p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .mc-service .svc-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    /* MODAL */
+    .mc-service .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      z-index: 99999;
+      overflow-y: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .mc-service .modal.show { display: flex; overflow-y: auto; }
+    .mc-service .modal-content {
+      background: #fff;
+      border-radius: 24px;
+      padding: 32px;
+      max-width: 640px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    }
+    .mc-service .modal-content h2 { color: var(--red-dark); margin: 0 0 10px; font-size: 1.5rem; }
+    .mc-service .modal-content > p { margin: 0 0 16px; color: var(--muted); }
+    .mc-service #closeModal {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+      line-height: 1;
+    }
+    .mc-service #closeModal:hover { color: var(--red-dark); }
+    .mc-service .modal-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .mc-service .modal-form .field-full { grid-column: 1 / -1; }
+    .mc-service .modal-form input,
+    .mc-service .modal-form textarea {
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 14px 16px;
+      width: 100%;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .mc-service .modal-form textarea { min-height: 110px; resize: vertical; }
+    .mc-service .modal-form input:focus,
+    .mc-service .modal-form textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 4px rgba(208, 0, 0, 0.12);
+    }
+    .mc-service .modal-form .form-verify-block {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .mc-service .modal-form .turnstile-modal-widget-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mc-service .modal-form .form-security-loading {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: #9ca3af;
+      font-size: 0.8rem;
+    }
+    .mc-service .modal-form .form-security-spinner {
+      width: 0.875rem;
+      height: 0.875rem;
+      border: 2px solid #e5e7eb;
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: svcSpin 0.7s linear infinite;
+    }
+    @keyframes svcSpin { to { transform: rotate(360deg); } }
+    .mc-service .modal-form .turnstile-modal-widget { display: flex; justify-content: center; width: 100%; }
+    .mc-service .modal-form .turnstile-modal-status { font-size: 0.8rem; text-align: center; color: #6b7280; }
+    .mc-service .modal-form [data-form-result] { grid-column: 1 / -1; min-height: 1.25rem; font-size: 0.95rem; }
+    .mc-service .modal-form button[type="submit"] {
+      grid-column: 1 / -1;
+      background: var(--red-dark);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 0;
+      font-family: inherit;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .mc-service .modal-form button[type="submit"]:hover:not(:disabled) { background: #991b1b; }
+    .mc-service .modal-form button[type="submit"]:disabled { background: #9ca3af; cursor: not-allowed; }
+    .mc-service .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .mc-service .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 600px) {
+      .mc-service .svc-hero { padding: 76px 16px 56px; }
+      .mc-service .svc-hero__actions,
+      .mc-service .svc-cta__actions { flex-direction: column; align-items: center; }
+      .mc-service .svc-hero__actions .btn,
+      .mc-service .svc-cta__actions .btn { width: 100%; max-width: 320px; }
+      .mc-service .modal-form { grid-template-columns: 1fr; }
+      .mc-service .svc-card { flex-direction: column; }
+    }
+  </style>
+  <section class="svc-hero">
+    <div class="svc-hero__wrap">
+      <span class="svc-hero__eyebrow">Consulting Services</span>
+      <h1 class="svc-hero__title">Tax Consulting in Sofia</h1>
+      <p class="svc-hero__sub">Specific answers to your specific questions — tax planning and strategic advice for cost optimization and confident growth.</p>
+      <div class="svc-hero__actions">
+        <a href="tel:+359879884488" class="btn btn-orange">Call +359 879 88 44 88</a>
+        <a href="/en/contact#contact-form" class="btn btn-outline" data-open-enquiry=""><i class="fa-solid fa-paper-plane"></i> Request a Consultation</a>
+      </div>
+<!-- mc-hero-call (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-call" style="margin: 14px 0 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.92; max-width: 640px;">Contact Doychin Mehov. Tell him briefly what you need – he will explain the next steps and you will get a quote.</p>
+<!-- mc-hero-price (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-price" style="margin: 10px 0 0; font-size: 1rem; line-height: 1.5; font-weight: 700; max-width: 640px;">Consultation from 50 € per hour</p>
+    </div>
+  </section>
+  <section class="svc-intro reveal">
+    <div class="container">
+      <div class="svc-intro__inner">
+        <h2>When you need a specific answer</h2>
+        <p>Sometimes you don't need monthly accounting — you need a clear answer to a specific question: how to optimize your taxation, whether to switch from sole trader to a limited company, how to structure a new deal. That's why we offer consulting separately from ongoing accounting.</p>
+        <p>We work with clients who already use our accounting services, as well as with companies that simply want a competent outside opinion without changing their current accountant.</p>
+      </div>
+    </div>
+  </section>
+  <section class="svc-includes reveal">
+    <div class="container">
+      <h2>How we can help</h2>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 8h4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <div><h3>Tax planning and optimization</h3><p>Lawful strategies to reduce your tax burden, tailored to your specific activity.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></div>
+          <div><h3>Choosing a legal form</h3><p>Help choosing between sole trader, single-owner (EOOD) or multi-owner (OOD) limited company — when starting or restructuring a business.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M5 8l7-4 7 4M5 8v8l7 4 7-4V8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg></div>
+          <div><h3>Advice on deals and investments</h3><p>An expert view on deals, investments or expansion of your activity.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <div><h3>Support during tax audits</h3><p>Preparation and assistance during tax audits and communication with the tax authorities.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"></circle><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <div><h3>One-off or regular consulting</h3><p>According to your needs — from a single question to ongoing advisory support.</p></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+          <div><h3>Growth strategy</h3><p>Financial guidance for sustainable development in a dynamic, competitive business environment.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="svc-why reveal">
+    <div class="container">
+      <div class="svc-why__inner">
+        <h2>Why trust us</h2>
+        <p>Over 25 years of experience means we have seen most situations a business can find itself in — and we know which approach works in practice, not just in theory.</p>
+        <p>We give you clear, actionable advice in plain language — no complicated terms hiding uncertainty. Our goal is for you to understand not only what to do, but why.</p>
+      </div>
+    </div>
+  </section>
+  <section class="svc-faq reveal">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><button type="button" class="faq-question">How much does a consultation cost? <span>+</span></button><div class="faq-answer">From 50 € per hour. The exact amount depends on the type and scope of the question. Contact us to discuss your case and receive a quote.</div></div>
+      <div class="faq-item"><button type="button" class="faq-question">Can I get a consultation without being your accounting client? <span>+</span></button><div class="faq-answer">Yes. Consulting is entirely separate — you don't need to change your current accountant to get a competent opinion from us.</div></div>
+      <div class="faq-item"><button type="button" class="faq-question">Sole trader or limited company — which is right for me? <span>+</span></button><div class="faq-answer">It depends on your activity and level of risk. With a limited company your personal assets are protected; as a sole trader you are liable with all your assets. Contact us for a specific assessment.</div></div>
+      <div class="faq-item"><button type="button" class="faq-question">Do you work with clients outside Sofia? <span>+</span></button><div class="faq-answer">Yes. Consultations can also be held remotely.</div></div>
+    </div>
+  </section>
+  <section class="svc-cta reveal">
+    <div class="svc-cta__inner">
+      <h2>Have a specific question about your business?</h2>
+      <p>Contact us for a consultation tailored to your situation — clear answers you can rely on.</p>
+      <div class="svc-cta__actions">
+        <a href="tel:+359879884488" class="btn btn-orange">Call +359 879 88 44 88</a>
+        <a href="/en/contact#contact-form" class="btn btn-outline" data-open-enquiry="">Request a Consultation</a>
+      </div>
+    </div>
+  </section>
+  <div id="enquiryModal" class="modal" aria-hidden="true">
+    <div class="modal-content" data-form-section="" data-form-lang="en" role="dialog" aria-labelledby="enquiryModalTitle" aria-modal="true">
+      <button type="button" id="closeModal" aria-label="Close">×</button>
+      <h2 id="enquiryModalTitle">Send an enquiry</h2>
+      <p>You can reach us through the enquiry form or directly by phone or email.</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="popupEnquiryForm" class="modal-form"><input type="hidden" name="form-name" value="contact"/><input type="hidden" name="page" value="/en/services/consultancy"/><p class="mc-hp" hidden><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
+        <input type="text" name="name" placeholder="* Name" required="" autocomplete="name" aria-label="Name">
+        <input type="text" name="company" placeholder="Company name" autocomplete="organization" aria-label="Company name">
+        <input type="tel" name="phone" placeholder="* Phone" required="" autocomplete="tel" aria-label="Phone">
+        <input class="field-full" type="email" name="email" placeholder="* Email (e.g. name@company.com)" required="" autocomplete="email" aria-label="Email (e.g. name@company.com)">
+        <textarea class="field-full" name="message" placeholder="* Message" required="" aria-label="Message"></textarea>
+        <button type="submit" data-form-submit="" data-submit-label="Send" aria-busy="false">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          <span>Send</span>
+        </button>
+        <p class="mc-privacy-note">By submitting this form you agree to the processing of your data as described in our <a href="/en/privacy-policy">Privacy Policy</a>.</p>
+        <div data-form-result="" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</main>
+<!--Note:this Script shouldn't be deleted or updated for the form to work correctly on storing data and sending email-->
+<!-- CRITICAL:START form-widget-submit — Do not remove without explicit approval. -->
+<!-- CRITICAL:END form-widget-submit -->
+<script is:inline>
+(function () {
+  document.querySelectorAll(".mc-service .faq-question").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.parentElement;
+      var active = item.classList.contains("active");
+      document.querySelectorAll(".mc-service .faq-item").forEach(function (el) { el.classList.remove("active"); });
+      if (!active) item.classList.add("active");
+    });
+  });
+  if ("IntersectionObserver" in window) {
+    var revealIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          revealIo.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".mc-service .reveal").forEach(function (el) { revealIo.observe(el); });
+  } else {
+    document.querySelectorAll(".mc-service .reveal").forEach(function (el) { el.classList.add("is-visible"); });
+  }
+})();
+</script>
+<!-- ===== FOOTER (VAMIBEX 18.10.2026) ===== -->
+<!-- www -> non-www (VAMIBEX 12.11.2026; временно, докато няма 301 на сървъра) -->
+</Layout>

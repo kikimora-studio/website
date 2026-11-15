@@ -1,7 +1,10 @@
 {
-  "name": "kikimora-studio",
+  "name": "mehovconsult-web",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,21 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.5.0",
-    "@astrojs/mdx": "^5.0.0",
-    "@playform/inline": "^0.1.2",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.2.1",
-    "@types/alpinejs": "^3.13.11",
-    "alpinejs": "^3.15.8",
-    "astro": "^6.0.4",
-    "glightbox": "^3.3.0",
-    "masonry-layout": "^4.2.2",
-    "swiper": "^12.1.2",
-    "tailwindcss": "^4.2.1"
-  },
-  "devDependencies": {
-    "@types/html-escaper": "^3.0.4",
-    "html-escaper": "^3.0.3"
+    "@astrojs/markdown-satteri": "^0.4.10",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.0.7"
   }
 }

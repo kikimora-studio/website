@@ -1,0 +1,12 @@
+# Netlify redirects (https://docs.netlify.com/routing/redirects/)
+# "!" forces the redirect even though Astro also writes a fallback page there.
+
+https://www.mehovconsult.com/*  https://mehovconsult.com/:splat  301!
+/                 /bg                  301!
+/blog             /bg/blog             301!
+
+# Old duplicate URLs of the posts (canonical is /blog/<slug>)
+/bg/blog/*        /blog/:splat         301
+
+# The old sitemap address (submitted to Google Search Console)
+/sitemap.xml      /sitemap-index.xml   301

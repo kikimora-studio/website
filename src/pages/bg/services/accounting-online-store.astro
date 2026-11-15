@@ -1,0 +1,158 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mehovconsult.com/bg/services/accounting-online-store",
+      "url": "https://mehovconsult.com/bg/services/accounting-online-store",
+      "name": "Счетоводство за онлайн магазин в София | Мехов Консулт",
+      "description": "Счетоводно обслужване на онлайн магазини: ДДС и продажби в ЕС (OSS), наложен платеж, плащания с карта, Наредба Н-18 и складова наличност.",
+      "inLanguage": "bg",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Мехов Консулт",
+        "url": "https://mehovconsult.com/bg"
+      },
+      "about": {
+        "@id": "https://mehovconsult.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Счетоводство за онлайн магазин",
+      "serviceType": "Счетоводство за онлайн магазин",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "София"
+        },
+        {
+          "@type": "Country",
+          "name": "България"
+        }
+      ],
+      "provider": {
+        "@id": "https://mehovconsult.com/#organization"
+      },
+      "url": "https://mehovconsult.com/bg/services/accounting-online-store"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Трябва ли онлайн магазинът да се регистрира по ДДС?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Задължително е, когато облагаемият оборот от началото на годината надхвърли 51 130 €. Ако продавате на граждани в други държави от ЕС и тези продажби надхвърлят общо 10 000 € годишно, ДДС се дължи в държавата на купувача и може да се отчита през режима OSS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какво е важно при наложен платеж?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Плащането минава през куриера, затова приходите трябва да се отчитат по данните от куриера и да се съгласуват с поръчките. Изискванията на Наредба Н-18 зависят от начина на плащане – ще ви кажем какво точно важи за вашия магазин."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Може ли да започна като физическо лице?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Продажбата на стоки с цел печалба е търговска дейност и обикновено изисква фирма. Ако се колебаете между ЕТ и ЕООД, вижте сравнението в блога ни или ни попитайте."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Работите ли с магазини извън София?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Работим и дистанционно – документите се обменят по имейл или онлайн."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+<Layout lang="bg" path="/bg/services/accounting-online-store" title={"Счетоводство за онлайн магазин в София | Мехов Консулт"} description={"Счетоводно обслужване на онлайн магазини: ДДС и продажби в ЕС (OSS), наложен платеж, плащания с карта, Наредба Н-18 и складова наличност."} schema={schema}>
+<style is:inline>
+/* landing pages (VAMIBEX 19.10.2026) */
+.mc-landing { color: #1f2937; line-height: 1.7; }
+.mc-landing .lp-hero { background: #111827; color: #fff; padding: 64px 20px 56px; }
+.mc-landing .lp-wrap { max-width: 980px; margin: 0 auto; }
+.mc-landing .lp-hero h1 { font-size: 2.3rem; line-height: 1.2; margin: 0 0 16px; color: #fff; }
+.mc-landing .lp-hero p { font-size: 1.1rem; color: #e5e7eb; margin: 0 0 24px; max-width: 760px; }
+.mc-landing .lp-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.mc-landing .lp-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.mc-landing .lp-btn--main { background: #d00000; color: #fff; }
+.mc-landing .lp-btn--ghost { border: 2px solid #fff; color: #fff; }
+.mc-landing .lp-trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 0; margin: 18px 0 0; font-weight: 600; }
+.mc-landing .lp-trust li::before { content: "✓"; margin-right: 6px; color: #22c55e; font-weight: 800; }
+.mc-landing .lp-sec { padding: 48px 20px 8px; }
+.mc-landing .lp-sec h2 { font-size: 1.6rem; margin: 0 0 16px; color: #111827; }
+.mc-landing .lp-sec h3 { font-size: 1.1rem; margin: 22px 0 6px; color: #111827; }
+.mc-landing .lp-list { padding-left: 22px; }
+.mc-landing .lp-list li { margin: 0 0 8px; }
+.mc-landing .lp-steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 14px; }
+.mc-landing .lp-steps li { counter-increment: s; position: relative; padding: 14px 16px 14px 60px; background: #f9fafb; border-radius: 12px; }
+.mc-landing .lp-steps li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: #d00000; color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.mc-landing .lp-related a { color: #d00000; }
+.mc-landing .lp-cta { margin: 48px 20px 64px; padding: 32px 24px; background: #fef2f2; border-radius: 16px; text-align: center; }
+.mc-landing .lp-cta h2 { margin: 0 0 10px; font-size: 1.5rem; color: #111827; }
+.mc-landing .lp-cta p { margin: 0 0 18px; }
+.mc-landing .lp-cta .lp-btn--ghost { border-color: #d00000; color: #d00000; }
+.mc-landing .lp-cta .lp-actions { justify-content: center; }
+@media (max-width: 600px) {
+  .mc-landing .lp-hero { padding: 44px 16px 40px; }
+  .mc-landing .lp-hero h1 { font-size: 1.8rem; }
+  .mc-landing .lp-btn { width: 100%; }
+}
+</style>
+<main class="mc-landing">
+<section class="lp-hero"><div class="lp-wrap">
+<h1>Счетоводство за онлайн магазин</h1>
+<p>Онлайн търговията има свои изисквания: наложени платежи през куриер, плащания с карта и PayPal, продажби към клиенти в ЕС и отчитане на наличността. Водим счетоводството на магазина ви така, че да няма изненади при проверка от НАП.</p>
+<div class="lp-actions"><a class="lp-btn lp-btn--main" href="tel:+359879884488">Обадете се: 0879 88 44 88</a><a class="lp-btn lp-btn--ghost" href="/bg/contact#contact-form">Поискайте безплатна оферта</a></div>
+<!-- mc-hero-call (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-call" style="margin: 14px 0 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.92; max-width: 640px;">Свържете се с Дойчин Мехов. Разкажете накратко какво ви трябва – той ще ви каже следващите стъпки и ще получите оферта.</p>
+<!-- mc-hero-price (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-price" style="margin: 10px 0 0; font-size: 1rem; line-height: 1.5; font-weight: 700; max-width: 640px;">Счетоводно обслужване – от 120 € на месец</p>
+<ul class="lp-trust"><li>Говорите директно с Дойчин Мехов</li><li>Офис в София, жк. Дървеница</li><li>Над 25 години опит</li></ul>
+</div></section>
+<section class="lp-sec"><div class="lp-wrap">
+<h2>Какво поемаме</h2>
+<ul class="lp-list"><li>Текущо счетоводство на продажбите от магазина, куриерите и платежните системи</li><li>Съответствие с Наредба Н-18 – уведомление към НАП за онлайн магазина и документи при плащане</li><li>ДДС регистрация и отчитане, вкл. продажби на разстояние към граждани в ЕС и режим OSS над общия праг от 10 000 €</li><li>Складова отчетност и инвентаризация на стоката</li><li>Заплати и осигуровки, ако имате служители</li><li>Годишно приключване и годишна данъчна декларация</li></ul>
+</div></section>
+<section class="lp-sec"><div class="lp-wrap">
+<h2>Как работим</h2>
+<ol class="lp-steps"><li>Разказвате ни как работи магазинът – платформа, куриери, начини на плащане</li><li>Правим преглед и ви казваме какво трябва да се уреди с НАП и ДДС</li><li>Изпращаме ви оферта според обема на поръчките и документите</li><li>Поемаме счетоводството всеки месец и ви предупреждаваме за сроковете</li></ol>
+</div></section>
+<section class="lp-sec lp-faq"><div class="lp-wrap">
+<h2>Често задавани въпроси</h2>
+<h3>Трябва ли онлайн магазинът да се регистрира по ДДС?</h3>
+<p>Задължително е, когато облагаемият оборот от началото на годината надхвърли 51 130 €. Ако продавате на граждани в други държави от ЕС и тези продажби надхвърлят общо 10 000 € годишно, ДДС се дължи в държавата на купувача и може да се отчита през режима OSS.</p>
+<h3>Какво е важно при наложен платеж?</h3>
+<p>Плащането минава през куриера, затова приходите трябва да се отчитат по данните от куриера и да се съгласуват с поръчките. Изискванията на Наредба Н-18 зависят от начина на плащане – ще ви кажем какво точно важи за вашия магазин.</p>
+<h3>Може ли да започна като физическо лице?</h3>
+<p>Продажбата на стоки с цел печалба е търговска дейност и обикновено изисква фирма. Ако се колебаете между ЕТ и ЕООД, вижте сравнението в блога ни или ни попитайте.</p>
+<h3>Работите ли с магазини извън София?</h3>
+<p>Да. Работим и дистанционно – документите се обменят по имейл или онлайн.</p>
+</div></section>
+<section class="lp-sec lp-related"><div class="lp-wrap">
+<h2>Полезно от блога</h2>
+<ul class="lp-list"><li><a href="/blog/eood-ili-et">ЕООД или ЕТ: коя форма да изберете през 2026 г.</a></li><li><a href="/blog/dds-registraciya">Регистрация по ДДС през 2026 г.</a></li><li><a href="/blog/predmet-na-deynost">Предмет на дейност и код по КИД</a></li></ul>
+</div></section>
+<section class="lp-cta"><div class="lp-wrap">
+<h2>Имате онлайн магазин или тепърва стартирате?</h2>
+<p>Пишете ни – ще ви отговорим с конкретна оферта. Офис в София, жк. Дървеница, работим и дистанционно.</p>
+<div class="lp-actions"><a class="lp-btn lp-btn--main" href="tel:+359879884488">Обадете се: 0879 88 44 88</a><a class="lp-btn lp-btn--ghost" href="/bg/contact#contact-form">Поискайте безплатна оферта</a></div>
+</div></section>
+</main> 
+<!-- ===== FOOTER (VAMIBEX 18.10.2026) ===== -->
+<!-- www -> non-www (VAMIBEX 12.11.2026; временно, докато няма 301 на сървъра) -->
+</Layout>

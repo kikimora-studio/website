@@ -1,0 +1,5 @@
+/* Privacy note under the forms. */
+
+/* privacy note + footer link (VAMIBEX 19.10.2026) */
+.mc-privacy-note { font-size: .8rem; color: #6b7280; margin: 10px 0 0; line-height: 1.4; }
+.mc-privacy-note a { color: #d00000; text-decoration: underline; }

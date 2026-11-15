@@ -1,0 +1,14 @@
+/* Cookie consent banner. */
+
+/* cookie consent (VAMIBEX 3.11.2026) */
+.mc-cc { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 9995; max-width: 560px; margin: 0 auto; background: #fff; color: #1f2937; border: 1px solid #e5e7eb; border-radius: 14px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); padding: 16px 18px; font-size: 0.92rem; line-height: 1.5; }
+.mc-cc[hidden] { display: none; }
+.mc-cc p { margin: 0 0 12px; }
+.mc-cc a { color: #d00000; text-decoration: underline; }
+.mc-cc__btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.mc-cc__btns button { min-height: 44px; padding: 0 18px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; border: 2px solid #d00000; font-family: inherit; }
+.mc-cc__no { background: #fff; color: #d00000; }
+.mc-cc__yes { background: #d00000; color: #fff; }
+@media (max-width: 768px) {
+  .mc-cc { bottom: 80px; left: 12px; right: 12px; }
+}

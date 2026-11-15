@@ -1,0 +1,86 @@
+---
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getPosts, postPath, formatDate, isoDate, readingMinutes, faqFromMarkdown, type Post } from '../../lib/blog';
+import { PHONE_HREF, ui } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props as { post: Post };
+const { Content } = await render(post);
+const d = post.data;
+const site = Astro.site!.origin;
+const url = site + postPath(post);
+const minutes = readingMinutes(post);
+
+const cta = d.cta ?? {
+  text: 'Имате въпрос по темата? Обадете ни се или ни пишете – ще ви отговорим възможно най-скоро.',
+  primary: { label: 'Счетоводни услуги', href: '/bg/services/accounting' },
+  secondary: { label: 'Безплатна оферта', href: '/bg/contact#contact-form' },
+};
+
+const org = { '@type': 'Organization', name: 'Мехов Консулт', url: site + '/bg' };
+const faq = faqFromMarkdown(post.body);
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      image: site + '/images/hero.webp',
+      headline: d.title,
+      description: d.description,
+      url,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      datePublished: isoDate(d.date),
+      dateModified: isoDate(d.updated ?? d.date),
+      inLanguage: 'bg',
+      author: org,
+      publisher: { ...org, logo: { '@type': 'ImageObject', url: site + '/images/mehovconsult-logo.png' } },
+    },
+    ...(faq.length
+      ? [{
+          '@type': 'FAQPage',
+          mainEntity: faq.map((f) => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: { '@type': 'Answer', text: f.answer },
+          })),
+        }]
+      : []),
+  ],
+};
+---
+<Layout lang="bg" path={postPath(post)} title={d.seoTitle ?? d.title} description={d.description} schema={schema} ogType="article">
+  <main class="mc-post">
+    <header class="post-hero">
+      <div class="post-hero__wrap container">
+        <h1>{d.title}</h1>
+        <div class="post-meta">
+          <span>Мехов Консулт</span>
+          <span class="post-meta__dot" aria-hidden="true">·</span>
+          <span><time datetime={isoDate(d.date)}>{formatDate(d.date)}</time></span>
+          <span class="post-meta__dot" aria-hidden="true">·</span>
+          <span>{minutes} {minutes === 1 ? 'минута' : 'минути'} четене</span>
+        </div>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <div class="container">
+        {d.lead && <p class="post-lead">{d.lead}</p>}
+        <Content />
+        <div class="post-cta">
+          <p>{cta.text}</p>
+          <a class="btn btn-orange" href={cta.primary.href}>{cta.primary.label}</a>{' '}
+          <a class="btn btn-outline" href={cta.secondary.href}>{cta.secondary.label}</a>
+          <p class="post-cta__phone">Или се обадете: <a href={PHONE_HREF}>{ui.bg.phone}</a></p>
+        </div>
+      </div>
+    </article>
+
+    <div class="post-back container"><a href="/bg/blog">← Всички статии</a></div>
+  </main>
+</Layout>

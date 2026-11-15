@@ -1,0 +1,158 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://mehovconsult.com/bg/services/accounting-freelancers",
+      "url": "https://mehovconsult.com/bg/services/accounting-freelancers",
+      "name": "Счетоводство за фрийлансъри – София | Мехов Консулт",
+      "description": "Осигуровки, авансов данък, годишна декларация и ДДС при услуги за чужди клиенти – за фрийлансъри, IT специалисти, лекари, адвокати и консултанти.",
+      "inLanguage": "bg",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Мехов Консулт",
+        "url": "https://mehovconsult.com/bg"
+      },
+      "about": {
+        "@id": "https://mehovconsult.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Счетоводство за свободни професии и фрийлансъри",
+      "serviceType": "Счетоводство за свободни професии",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "София"
+        },
+        {
+          "@type": "Country",
+          "name": "България"
+        }
+      ],
+      "provider": {
+        "@id": "https://mehovconsult.com/#organization"
+      },
+      "url": "https://mehovconsult.com/bg/services/accounting-freelancers"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Какви осигуровки плаща самоосигуряващото се лице?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Осигуровките се плащат месечно върху избран доход между минималния и максималния осигурителен доход за годината. Текущите суми и проценти за 2026 г. сме описали в статията за осигуровките на самоосигуряващите се."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Колко са нормативно признатите разходи при свободна професия?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "За повечето свободни професии – 25% от дохода; за някои дейности, например авторски и лицензионни възнаграждения, са 40%. Данъкът е 10% върху облагаемия доход след приспадане на признатите разходи и осигуровките."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Трябва ли ми ДДС регистрация, ако работя за клиент от чужбина?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ако предоставяте услуги на фирми в други държави от ЕС, обикновено е нужна регистрация по ДДС по чл. 97а ЗДДС, независимо от оборота. При клиенти извън ЕС правилата са различни – ще ги проверим за вашия случай."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "По-изгодно ли е да работя чрез ЕООД?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зависи от дохода, разходите и плановете ви. При по-висок доход фирмата често е по-изгодна, но има повече отчетност. Ще сравним двата варианта с вашите числа."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+<Layout lang="bg" path="/bg/services/accounting-freelancers" title={"Счетоводство за фрийлансъри – София | Мехов Консулт"} description={"Осигуровки, авансов данък, годишна декларация и ДДС при услуги за чужди клиенти – за фрийлансъри, IT специалисти, лекари, адвокати и консултанти."} schema={schema}>
+<style is:inline>
+/* landing pages (VAMIBEX 19.10.2026) */
+.mc-landing { color: #1f2937; line-height: 1.7; }
+.mc-landing .lp-hero { background: #111827; color: #fff; padding: 64px 20px 56px; }
+.mc-landing .lp-wrap { max-width: 980px; margin: 0 auto; }
+.mc-landing .lp-hero h1 { font-size: 2.3rem; line-height: 1.2; margin: 0 0 16px; color: #fff; }
+.mc-landing .lp-hero p { font-size: 1.1rem; color: #e5e7eb; margin: 0 0 24px; max-width: 760px; }
+.mc-landing .lp-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.mc-landing .lp-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.mc-landing .lp-btn--main { background: #d00000; color: #fff; }
+.mc-landing .lp-btn--ghost { border: 2px solid #fff; color: #fff; }
+.mc-landing .lp-trust { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 0; margin: 18px 0 0; font-weight: 600; }
+.mc-landing .lp-trust li::before { content: "✓"; margin-right: 6px; color: #22c55e; font-weight: 800; }
+.mc-landing .lp-sec { padding: 48px 20px 8px; }
+.mc-landing .lp-sec h2 { font-size: 1.6rem; margin: 0 0 16px; color: #111827; }
+.mc-landing .lp-sec h3 { font-size: 1.1rem; margin: 22px 0 6px; color: #111827; }
+.mc-landing .lp-list { padding-left: 22px; }
+.mc-landing .lp-list li { margin: 0 0 8px; }
+.mc-landing .lp-steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 14px; }
+.mc-landing .lp-steps li { counter-increment: s; position: relative; padding: 14px 16px 14px 60px; background: #f9fafb; border-radius: 12px; }
+.mc-landing .lp-steps li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: #d00000; color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.mc-landing .lp-related a { color: #d00000; }
+.mc-landing .lp-cta { margin: 48px 20px 64px; padding: 32px 24px; background: #fef2f2; border-radius: 16px; text-align: center; }
+.mc-landing .lp-cta h2 { margin: 0 0 10px; font-size: 1.5rem; color: #111827; }
+.mc-landing .lp-cta p { margin: 0 0 18px; }
+.mc-landing .lp-cta .lp-btn--ghost { border-color: #d00000; color: #d00000; }
+.mc-landing .lp-cta .lp-actions { justify-content: center; }
+@media (max-width: 600px) {
+  .mc-landing .lp-hero { padding: 44px 16px 40px; }
+  .mc-landing .lp-hero h1 { font-size: 1.8rem; }
+  .mc-landing .lp-btn { width: 100%; }
+}
+</style>
+<main class="mc-landing">
+<section class="lp-hero"><div class="lp-wrap">
+<h1>Счетоводство за свободни професии и фрийлансъри</h1>
+<p>Работите на свободна практика – като IT специалист, дизайнер, преводач, консултант, лекар или адвокат? Поемаме осигуровките, авансовите вноски и годишната декларация, както и ДДС въпросите при работа с клиенти от чужбина.</p>
+<div class="lp-actions"><a class="lp-btn lp-btn--main" href="tel:+359879884488">Обадете се: 0879 88 44 88</a><a class="lp-btn lp-btn--ghost" href="/bg/contact#contact-form">Поискайте безплатна оферта</a></div>
+<!-- mc-hero-call (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-call" style="margin: 14px 0 0; font-size: 0.95rem; line-height: 1.5; opacity: 0.92; max-width: 640px;">Свържете се с Дойчин Мехов. Разкажете накратко какво ви трябва – той ще ви каже следващите стъпки и ще получите оферта.</p>
+<!-- mc-hero-price (VAMIBEX 20.10.2026) -->
+<p class="mc-hero-price" style="margin: 10px 0 0; font-size: 1rem; line-height: 1.5; font-weight: 700; max-width: 640px;">Счетоводно обслужване – от 120 € на месец</p>
+<ul class="lp-trust"><li>Говорите директно с Дойчин Мехов</li><li>Офис в София, жк. Дървеница</li><li>Над 25 години опит</li></ul>
+</div></section>
+<section class="lp-sec"><div class="lp-wrap">
+<h2>С какво помагаме</h2>
+<ul class="lp-list"><li>Регистрация като самоосигуряващо се лице и избор на осигурителен доход</li><li>Месечни осигуровки и тримесечни авансови вноски за данък</li><li>Годишна данъчна декларация до 30 април, вкл. нормативно признатите разходи – 25% за повечето свободни професии</li><li>ДДС регистрация по чл. 97а ЗДДС при услуги за фирми от други държави от ЕС</li><li>Сравнение: да останете на свободна практика или да работите чрез ЕООД</li></ul>
+</div></section>
+<section class="lp-sec"><div class="lp-wrap">
+<h2>Как работим</h2>
+<ol class="lp-steps"><li>Казвате ни каква е дейността ви и откъде идват приходите</li><li>Изчисляваме осигуровките и данъка и ви казваме какво трябва да подадете</li><li>Изпращаме ви оферта</li><li>Поемаме сроковете – вие получавате напомняне и суми за плащане</li></ol>
+</div></section>
+<section class="lp-sec lp-faq"><div class="lp-wrap">
+<h2>Често задавани въпроси</h2>
+<h3>Какви осигуровки плаща самоосигуряващото се лице?</h3>
+<p>Осигуровките се плащат месечно върху избран доход между минималния и максималния осигурителен доход за годината. Текущите суми и проценти за 2026 г. сме описали в статията за осигуровките на самоосигуряващите се.</p>
+<h3>Колко са нормативно признатите разходи при свободна професия?</h3>
+<p>За повечето свободни професии – 25% от дохода; за някои дейности, например авторски и лицензионни възнаграждения, са 40%. Данъкът е 10% върху облагаемия доход след приспадане на признатите разходи и осигуровките.</p>
+<h3>Трябва ли ми ДДС регистрация, ако работя за клиент от чужбина?</h3>
+<p>Ако предоставяте услуги на фирми в други държави от ЕС, обикновено е нужна регистрация по ДДС по чл. 97а ЗДДС, независимо от оборота. При клиенти извън ЕС правилата са различни – ще ги проверим за вашия случай.</p>
+<h3>По-изгодно ли е да работя чрез ЕООД?</h3>
+<p>Зависи от дохода, разходите и плановете ви. При по-висок доход фирмата често е по-изгодна, но има повече отчетност. Ще сравним двата варианта с вашите числа.</p>
+</div></section>
+<section class="lp-sec lp-related"><div class="lp-wrap">
+<h2>Полезно от блога</h2>
+<ul class="lp-list"><li><a href="/blog/osigurovki-samoosiguryavashto-se-lice">Осигуровки на самоосигуряващите се през 2026 г.</a></li><li><a href="/blog/eood-ili-et">ЕООД или ЕТ: коя форма да изберете</a></li><li><a href="/blog/danachni-oblekcheniya-startirashti-firmi">Данъчни облекчения за фирми през 2026 г.</a></li></ul>
+</div></section>
+<section class="lp-cta"><div class="lp-wrap">
+<h2>Работите на свободна практика?</h2>
+<p>Пишете ни – ще ви отговорим с конкретна оферта. Офис в София, жк. Дървеница, работим и дистанционно.</p>
+<div class="lp-actions"><a class="lp-btn lp-btn--main" href="tel:+359879884488">Обадете се: 0879 88 44 88</a><a class="lp-btn lp-btn--ghost" href="/bg/contact#contact-form">Поискайте безплатна оферта</a></div>
+</div></section>
+</main> 
+<!-- ===== FOOTER (VAMIBEX 18.10.2026) ===== -->
+<!-- www -> non-www (VAMIBEX 12.11.2026; временно, докато няма 301 на сървъра) -->
+</Layout>

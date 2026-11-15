@@ -1,0 +1,11 @@
+/* Small global fixes. */
+
+/* Font Awesome не е зареден: празните иконни тагове да не заемат място (VAMIBEX 18.10.2026) */
+i.fa-solid { display: none; }
+/* Тап-таргет на „← Всички статии“ (VAMIBEX 18.10.2026) */
+.mc-post a[href$="/bg/blog"] { display: inline-block; padding: 6px 0; }
+
+/* Mobile form fields: 16px, за да не увеличава iOS при фокус (VAMIBEX 18.10.2026) */
+@media (max-width: 480px) {
+  input, select, textarea, .mc-input, .mc-textarea { font-size: 16px !important; }
+}

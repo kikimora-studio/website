@@ -1,0 +1,11 @@
+/* Mobile sticky call / enquiry bar. */
+
+.mc-sticky-cta { display: none; }
+[id] { scroll-margin-top: 112px; }
+@media (max-width: 768px) {
+  .mc-sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9990; gap: 8px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #fff; box-shadow: 0 -4px 16px rgba(0,0,0,.12); }
+  .mc-sticky-cta a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+  .mc-sticky-cta__call { background: #d00000; color: #fff; border: 2px solid #d00000; }
+  .mc-sticky-cta__enq { border: 2px solid #d00000; color: #d00000; background: #fff; }
+  body { padding-bottom: 72px; }
+}
